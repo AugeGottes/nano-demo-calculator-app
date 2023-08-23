@@ -8,6 +8,7 @@ crow::response add(const crow::request &req)
 {
     auto input = crow::json::load(req.body);    
     int num1,num2;
+    cout<<num1<<" "<<num2<<endl;
     num1=input["first"].i();
     num2=input["second"].i();
     int result=num1+num2;
@@ -18,7 +19,7 @@ crow::response add(const crow::request &req)
 }
 crow::response subtract(const crow::request &req)
 {
-    auto input = crow::json::load(req.body);
+    crow::json::rvalue input = crow::json::load(req.body);
     int num1,num2;
     num1=input["first"].i();
     num2=input["second"].i();
