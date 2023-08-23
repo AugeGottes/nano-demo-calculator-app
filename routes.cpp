@@ -11,7 +11,10 @@ crow::response add(const crow::request &req)
     num1=input["first"].i();
     num2=input["second"].i();
     int result=num1+num2;
-    return crow::response{std::to_string(result)};
+    crow::json::wvalue response;
+    response["result"] = result;
+
+    return crow::response{response};
 }
 crow::response subtract(const crow::request &req)
 {
@@ -20,5 +23,8 @@ crow::response subtract(const crow::request &req)
     num1=input["first"].i();
     num2=input["second"].i();
     int result=num1-num2;
-    return crow::response{std::to_string(result)};
+    crow::json::wvalue response;
+    response["result"] = result;
+
+    return crow::response{response};
 }
