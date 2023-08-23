@@ -8,7 +8,7 @@ crow::response add(const crow::request &req)
 {
     auto input = crow::json::load(req.body);    
     int num1,num2;
-    cout<<num1<<" "<<num2<<endl;
+    std::cout<<num1<<" "<<num2<<std::endl;
     num1=input["first"].i();
     num2=input["second"].i();
     int result=num1+num2;
